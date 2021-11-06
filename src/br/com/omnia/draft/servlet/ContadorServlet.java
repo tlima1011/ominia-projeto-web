@@ -14,36 +14,27 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/contador")
 public class ContadorServlet extends HttpServlet{
 	
-	private int contador = 0; 
-		
+	private static final long serialVersionUID = 1L;
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse res) 
-			throws ServletException, IOException {
-		++contador; 
-		
-		PrintWriter out = ((ServletResponse) req).getWriter(); 
-		out.println("<html><body>"); 
-		out.println("Valor do contador: " + contador); 
-		out.println("</body></html>");
-		
+	public void init(ServletConfig config) throws ServletException {
+		super.init(config);
+		System.out.println("Iniciando o SERVLET!");
 	}
-	
+
 	@Override
 	public void destroy() {
 		super.destroy();
-		System.out.println("Destruinod o Servlet");
+		System.out.println("Destruindo o SERVLET!");
 	}
-
-	@Override
-	public void init(ServletConfig config) throws ServletException {
-		super.init();
+	
+	private int contador = 0; 
+	@Override protected void service(HttpServletRequest req, HttpServletResponse res) 
+			throws ServletException, IOException {
+		++contador; 
+		PrintWriter out = res.getWriter(); 
+		out.println("<html><body>"); 
+		out.println("Valor do contador: " + contador); 
+		out.println("</body></html>"); 
 	}
-
-	
-	
-	
-	
-	
-	
 	
 }
