@@ -26,8 +26,9 @@ public class CadastraProdutoServlet extends HttpServlet{
 			unidade = new Integer(request.getParameter("unidade"));
 			valor = new Double(request.getParameter("valor")); 
 		}catch(RuntimeException e) {
-			out.println("Erro de conversão de Valores inteiro e numerico"); 
-			return; 
+//			out.println("Erro de conversão de Valores inteiro e numerico"); 
+//			return; 
+			throw new ServletException(e); 
 		}
 		//Instanciação do Produto 
 		Produto produto = new Produto(nome,unidade,valor); 
@@ -35,7 +36,7 @@ public class CadastraProdutoServlet extends HttpServlet{
 		new ProdutoDao().adiciona(produto); 
 				
 		out.println("<html><body><h3>"); 
-		out.println("Produto: " +produto.getNome() +"Cadastrado com sucesso com codigo #" +produto.getCodigo()); 
+		out.println("Produto: " +produto.getNome() +" Cadastrado com sucesso com codigo #" +produto.getCodigo()); 
 		out.println("</h3></body></html>"); 
 	}
 }
