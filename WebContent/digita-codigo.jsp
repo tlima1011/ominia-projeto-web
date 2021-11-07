@@ -9,7 +9,7 @@
 </head>
 <body>
 	<form action="busca-produto.jsp" method="post" > 
-		Digite o codigo do Produto: 
+		<i>Digite o codigo do Produto:</i> 
 		<input type="number" name="codigo" size=3 maxlength="3"/> 
 		<br/>
 		<br/> 
