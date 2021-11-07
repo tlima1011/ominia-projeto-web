@@ -1,14 +1,8 @@
 <%@ page import="java.util.*, br.com.omnia.draft.dao.*, br.com.omnia.draft.model.*" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Busca Produto</title>
-</head>
-<body>
-	<h5>Código do Produto: ${param.codigo}</h5> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.util.*, br.com.omnia.draft.dao.*, br.com.omnia.draft.model.*" %>
+	<c:import url="base.jsp" />
+	<h4>Código do Produto: ${param.codigo}</h4> 
 	<% Integer codigo = new Integer(request.getParameter("codigo")); 
 	Produto produto = new ProdutoDao().busca(codigo); 
 	if (produto != null) { %> 
@@ -17,5 +11,4 @@
 	} else { %> 
 	<h4>Produto localizado!</h4> 
 	<% } %>
-</body>
-</html>
+<c:import url="rodape.jsp" />

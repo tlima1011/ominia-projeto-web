@@ -12,7 +12,8 @@ public class Produto {
     }
     
     public Produto(String nome, int unidade, Double valor) {
-		this.nome = nome;
+		this.codigo = codigo; 
+    	this.nome = nome;
 		this.unidade = unidade;
 		this.valor = valor;
 	}
