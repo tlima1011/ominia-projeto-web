@@ -1,4 +1,3 @@
-<%@ page import="br.com.omnia.draft.dao.ProdutoDao" %>
 <%@ page import="java.util.*, br.com.omnia.draft.dao.*, br.com.omnia.draft.model.*" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>

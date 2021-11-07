@@ -48,7 +48,7 @@ public class ProdutoDao {
     }//fim lista
 
     public Produto busca(Integer codigo) {
-        String sql = "select * from codigo where codigo = ?";
+        String sql = "select * from produto where codigo = ?";
         Produto produto = null;
         try (PreparedStatement stmt = connection.prepareStatement(sql))
         {
