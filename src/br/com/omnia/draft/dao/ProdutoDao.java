@@ -89,7 +89,6 @@ public class ProdutoDao {
             throw new RuntimeException(ex);
         }//fim try
     } //fim remove
-
 }
 
 
