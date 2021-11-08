@@ -21,6 +21,7 @@ public class BuscaProdutoServico implements Servico{
 		System.out.println("Procurando o Produto..."); 
 		new ProdutoDao(connection).busca(codigo);
 		//return new ListaProdutosServico().executa(request, response);
-		return "/WEB-INF/jsp/digita-codigo.jsp"; 
+		//return "/WEB-INF/jsp/digita-codigo.jsp";
+		return "/WEB-INF/jsp/cadastra-produto.jsp";
 	}
 }
