@@ -68,7 +68,7 @@ public class ProdutoDao {
         }//fim busca
 
     public void altera(Produto produto) {
-        String sql = "update imovel set nome = ?, unidade = ?, valor = ? where codigo = ?";
+        String sql = "update produto set nome = ?, unidade = ?, valor = ? where codigo = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, produto.getNome());
             stmt.setInt(2, produto.getUnidade());

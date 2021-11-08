@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:import url="base.jsp"/> 
+<h3><a href="mvc?servico=MostraProdutoServico">Cadastrar Produto</a></h3>
 <h1 align="center">Lista de Produtos</h1> 
 <table cellspacing="2" width="65%" align="center" table class="table-secondary"> 
 	<thead align="left"><tr> 
@@ -13,7 +14,8 @@
 				<td>${produto.nome}</td> 
 				<td>${produto.unidade}</td> 
 				<td><fmt:formatNumber value="${produto.valor}" type="currency"/></td> 
-				<td><a href="mvc?servico=RemoveImovelServico&codigo=${produto.codigo}">Remover</a> </td>
+				<td><a href="mvc?servico=MostraProdutoServico&codigo=${produto.codigo}">Alterar</a> </td>
+				<td><a href="mvc?servico=RemoveProdutoServico&codigo=${produto.codigo}">Remover</a> </td>
 			</tr> 
 		</c:forEach> 
 	</table>
