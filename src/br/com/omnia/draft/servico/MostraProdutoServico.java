@@ -18,6 +18,6 @@ public class MostraProdutoServico implements Servico{
 			Produto produto = new ProdutoDao().busca(codigo); 
 			request.setAttribute("produto", produto); 
 		} 
-		return "cadastra-produto.jsp";
+		return "/WEB-INF/jsp/cadastra-produto.jsp";
 	}
 }

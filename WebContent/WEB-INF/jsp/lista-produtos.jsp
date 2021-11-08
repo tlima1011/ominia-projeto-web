@@ -3,11 +3,11 @@
 <c:import url="base.jsp"/> 
 <h3><a href="mvc?servico=MostraProdutoServico">Cadastrar Produto</a></h3>
 <h1 align="center">Lista de Produtos</h1> 
-<table cellspacing="2" width="65%" align="center" table class="table-secondary"> 
-	<thead align="left"><tr> 
-		<th scope="col">Nome</th> 
-		<th scope="col">Unidade</th> 
-		<th scope="col">Valor</th> 
+<table cellspacing="2" width="65%" align="center"> 
+	<thead><tr> 
+		<th>Nome</th> 
+		<th>Unidade</th> 
+		<th>Valor</th> 
 	</thead> 
 		<c:forEach var="produto" items="${produtos}" varStatus="ln"> 
 			<tr bgcolor="#${ln.count % 2 == 0 ? 'd4c5c5' : 'ffffff'}">

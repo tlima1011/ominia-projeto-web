@@ -17,7 +17,7 @@
 				<td><input type="number" name="valor" size=22 maxlength="7" step="0.01" pattern="^\d+(?:\.\d{1,2})?$" min="1" placeholder="Preço produto em R$" value="${produto.valor}"/></td>
 			</tr>	
 		</table>
-	<input type = "submit" value="Salvar"/>
+	<input type = "submit" value="Salvar" onclick="alert('Produto salvo com sucesso!')"/>
 	<input type = "reset" value="Reiniciar"/>
 	<a href="mvc?servico=ListaProdutosServico">
 		<input type = "button" value="Voltar"/>

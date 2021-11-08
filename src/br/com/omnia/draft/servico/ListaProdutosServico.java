@@ -14,6 +14,6 @@ public class ListaProdutosServico implements Servico{
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		List<Produto> produtos = new ProdutoDao().getLista(); 
 		request.setAttribute("produtos", produtos); 
-		return "lista-produtos.jsp";
+		return "/WEB-INF/jsp/lista-produtos.jsp";
 	}
 }

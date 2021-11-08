@@ -13,9 +13,10 @@ public class RemoveProdutoServico implements Servico{
 		Integer codigo = Integer.parseInt(request.getParameter("codigo")); 
 		Produto produto = new Produto(); 
 		produto.setCodigo(codigo); 
-		System.out.println("Excluindo o imóvel..."); 
+		System.out.println("Excluindo o Produto..."); 
 		new ProdutoDao().remove(produto);
-		return "lista-produtos.jsp"; 
+		return new ListaProdutosServico().executa(request, response);
+		//return "/WEB-INF/jsp/lista-produtos.jsp"; 
 	}
 }
 		
