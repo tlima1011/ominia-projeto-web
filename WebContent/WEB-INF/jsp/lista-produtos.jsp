@@ -1,8 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:import url="base.jsp"/> 
-<h3><a href="mvc?servico=MostraProdutoServico">Cadastrar Produto</a></h3>
 <h1 align="center">Lista de Produtos</h1> 
+<hr>
 <table cellspacing="2" width="65%" align="center"> 
 	<thead><tr> 
 		<th>Nome</th> 

@@ -1,5 +1,6 @@
 package br.com.omnia.draft.servico;
 
+import java.sql.Connection;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +13,10 @@ public class ListaProdutosServico implements Servico{
 
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		List<Produto> produtos = new ProdutoDao().getLista(); 
+		
+		Connection connection = (Connection) request.getAttribute("conexao"); 
+		
+		List<Produto> produtos = new ProdutoDao(connection).getLista(); 
 		request.setAttribute("produtos", produtos); 
 		return "/WEB-INF/jsp/lista-produtos.jsp";
 	}

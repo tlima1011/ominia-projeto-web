@@ -1,4 +1,6 @@
 package br.com.omnia.draft.servico;
+import java.sql.Connection;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,10 +13,13 @@ public class GravaProdutoServico implements Servico {
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
+		Connection connection = (Connection) request.getAttribute("conexao");
+		
 		String sCodigo = request.getParameter("codigo");
 		String nome = request.getParameter("nome");
 		Integer unidade = null; 
 		Double valor = null;
+				
 		try {
 			unidade = new Integer(request.getParameter("unidade")); 
 			valor = new Double(request.getParameter("valor"));
@@ -23,11 +28,11 @@ public class GravaProdutoServico implements Servico {
 		} // Instanciação do Produto 
 		Produto produto = new Produto(nome, unidade, valor); //Gravar no BD com o DAO 
 		if (sCodigo == null || sCodigo.equals("")) { 
-			new ProdutoDao().adiciona(produto);
+			new ProdutoDao(connection).adiciona(produto);
 		} else { 
 			Integer codigo = Integer.parseInt(sCodigo); 
 			produto.setCodigo(codigo); 
-			new ProdutoDao().altera(produto); 
+			new ProdutoDao(connection).altera(produto); 
 		} //retorna para o serviço de listar 
 		return new ListaProdutosServico().executa(request, response);
 	}

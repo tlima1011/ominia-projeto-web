@@ -8,20 +8,19 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.omnia.draft.dao.ProdutoDao;
 import br.com.omnia.draft.model.Produto;
 
-public class MostraProdutoServico implements Servico{
+public class BuscaProdutoServico implements Servico{
 
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		Connection connection = (Connection) request.getAttribute("conexao");
-		String parametro = request.getParameter("codigo"); 
 		
-		if (parametro != null) { 
-			Integer codigo = Integer.parseInt(request.getParameter("codigo")); 
-			System.out.println("Buscando o produto..."); 
-			Produto produto = new ProdutoDao(connection).busca(codigo); 
-			request.setAttribute("produto", produto); 
-		} 
-		return "/WEB-INF/jsp/cadastra-produto.jsp";
+		Integer codigo = Integer.parseInt(request.getParameter("codigo")); 
+		Produto produto = new Produto(); 
+		produto.setCodigo(codigo); 
+		System.out.println("Procurando o Produto..."); 
+		new ProdutoDao(connection).busca(codigo);
+		//return new ListaProdutosServico().executa(request, response);
+		return "/WEB-INF/jsp/digita-codigo.jsp"; 
 	}
 }

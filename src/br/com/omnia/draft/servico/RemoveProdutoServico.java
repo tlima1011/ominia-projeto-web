@@ -1,5 +1,7 @@
 package br.com.omnia.draft.servico;
 
+import java.sql.Connection;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -10,11 +12,14 @@ public class RemoveProdutoServico implements Servico{
 
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		Connection connection = (Connection) request.getAttribute("conexao");
+		
 		Integer codigo = Integer.parseInt(request.getParameter("codigo")); 
 		Produto produto = new Produto(); 
 		produto.setCodigo(codigo); 
 		System.out.println("Excluindo o Produto..."); 
-		new ProdutoDao().remove(produto);
+		new ProdutoDao(connection).remove(produto);
 		return new ListaProdutosServico().executa(request, response);
 		//return "/WEB-INF/jsp/lista-produtos.jsp"; 
 	}

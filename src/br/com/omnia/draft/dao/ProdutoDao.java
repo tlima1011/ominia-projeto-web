@@ -12,10 +12,14 @@ public class ProdutoDao {
     private Connection connection;
     //private final Connection connection;
 
+    public ProdutoDao(Connection connection) { 
+    	this.connection = connection; 
+    }
+    
     public ProdutoDao() {
         this.connection = new ConnectionFactory().getConnection();
     }
-
+    
     public void adiciona(Produto produto) {
         String sql = "insert into produto (nome, unidade, valor) values (?,?,?)";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
