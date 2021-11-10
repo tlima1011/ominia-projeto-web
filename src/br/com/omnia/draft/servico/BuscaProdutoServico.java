@@ -14,14 +14,6 @@ public class BuscaProdutoServico implements Servico{
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		Connection connection = (Connection) request.getAttribute("conexao");
-		
-//		Integer codigo = Integer.parseInt(request.getParameter("codigo")); 
-//		Produto produto = new Produto(); 
-//		produto.setCodigo(codigo); 
-//		System.out.println("Procurando o Produto..."); 
-//		new ProdutoDao(connection).busca(codigo);
-		//return new ListaProdutosServico().executa(request, response);
-		//return "/WEB-INF/jsp/digita-codigo.jsp";
 		return "/WEB-INF/jsp/digita-codigo.jsp";
 	}
 }

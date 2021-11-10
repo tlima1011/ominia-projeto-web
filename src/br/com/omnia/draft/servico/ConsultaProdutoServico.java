@@ -20,7 +20,7 @@ public class ConsultaProdutoServico implements Servico{
 		produto.setCodigo(codigo); 
 		System.out.println("Procurando o Produto..."); 
 		new ProdutoDao(connection).busca(codigo);
-		//return new ListaProdutosServico().executa(request, response);
+		
 		return "/WEB-INF/jsp/busca-produto.jsp";
 	}
 }

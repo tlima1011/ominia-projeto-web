@@ -11,7 +11,7 @@ public class ConnectionFactory {
         String usuario = "root";
         String senha = "";
         try {
-        	Class.forName("com.mysql.jdbc.Driver"); //necessário para o Tomcat 7
+        	Class.forName("com.mysql.jdbc.Driver"); //necessário para o Tomcat 
             return DriverManager.getConnection(url, usuario, senha);
         } catch (SQLException | ClassNotFoundException ex) {
             throw new RuntimeException(ex);
