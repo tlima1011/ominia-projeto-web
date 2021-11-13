@@ -13,7 +13,7 @@ public class BuscaProdutoServico implements Servico{
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		Connection connection = (Connection) request.getAttribute("conexao");
+		//Connection connection = (Connection) request.getAttribute("conexao");
 		return "/WEB-INF/jsp/digita-codigo.jsp";
 	}
 }
